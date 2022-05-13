@@ -1,177 +1,1057 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-e30bf0094ce3cc93d9b","applicationID":"575093072","transactionName":"dg0MF0FZCA8GQhlEQkAGBw1HGQACEFhUWFdHBg==","queueTime":1,"applicationTime":393,"agent":""}</script>
-    <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-e30bf0094ce3cc93d9b",applicationID:"575093072"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {});
+      NREUM.info = {
+        beacon: "bam.nr-data.net",
+        errorBeacon: "bam.nr-data.net",
+        licenseKey: "NRJS-e30bf0094ce3cc93d9b",
+        applicationID: "575093072",
+        transactionName: "dg0MF0FZCA8GQhlEQkAGBw1HGQACEFhUWFdHBg==",
+        queueTime: 1,
+        applicationTime: 393,
+        agent: "",
+      };
+    </script>
+    <script type="text/javascript">
+      (window.NREUM || (NREUM = {})).init = {
+        ajax: { deny_list: ["bam.nr-data.net"] },
+      };
+      (window.NREUM || (NREUM = {})).loader_config = {
+        licenseKey: "NRJS-e30bf0094ce3cc93d9b",
+        applicationID: "575093072",
+      };
+      window.NREUM || (NREUM = {}),
+        (__nr_require = (function (t, e, n) {
+          function r(n) {
+            if (!e[n]) {
+              var i = (e[n] = { exports: {} });
+              t[n][0].call(
+                i.exports,
+                function (e) {
+                  var i = t[n][1][e];
+                  return r(i || e);
+                },
+                i,
+                i.exports
+              );
+            }
+            return e[n].exports;
+          }
+          if ("function" == typeof __nr_require) return __nr_require;
+          for (var i = 0; i < n.length; i++) r(n[i]);
+          return r;
+        })(
+          {
+            1: [
+              function (t, e, n) {
+                function r() {}
+                function i(t, e, n, r) {
+                  return function () {
+                    return (
+                      s.recordSupportability("API/" + e + "/called"),
+                      o(
+                        t + e,
+                        [u.now()].concat(c(arguments)),
+                        n ? null : this,
+                        r
+                      ),
+                      n ? void 0 : this
+                    );
+                  };
+                }
+                var o = t("handle"),
+                  a = t(9),
+                  c = t(10),
+                  f = t("ee").get("tracer"),
+                  u = t("loader"),
+                  s = t(4),
+                  d = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = d);
+                var p = [
+                    "setPageViewName",
+                    "setCustomAttribute",
+                    "setErrorHandler",
+                    "finished",
+                    "addToTrace",
+                    "inlineHit",
+                    "addRelease",
+                  ],
+                  l = "api-",
+                  v = l + "ixn-";
+                a(p, function (t, e) {
+                  d[e] = i(l, e, !0, "api");
+                }),
+                  (d.addPageAction = i(l, "addPageAction", !0)),
+                  (d.setCurrentRouteName = i(l, "routeName", !0)),
+                  (e.exports = newrelic),
+                  (d.interaction = function () {
+                    return new r().get();
+                  });
+                var m = (r.prototype = {
+                  createTracer: function (t, e) {
+                    var n = {},
+                      r = this,
+                      i = "function" == typeof e;
+                    return (
+                      o(v + "tracer", [u.now(), t, n], r),
+                      function () {
+                        if (
+                          (f.emit(
+                            (i ? "" : "no-") + "fn-start",
+                            [u.now(), r, i],
+                            n
+                          ),
+                          i)
+                        )
+                          try {
+                            return e.apply(this, arguments);
+                          } catch (t) {
+                            throw (
+                              (f.emit("fn-err", [arguments, this, t], n), t)
+                            );
+                          } finally {
+                            f.emit("fn-end", [u.now()], n);
+                          }
+                      }
+                    );
+                  },
+                });
+                a(
+                  "actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(
+                    ","
+                  ),
+                  function (t, e) {
+                    m[e] = i(v, e);
+                  }
+                ),
+                  (newrelic.noticeError = function (t, e) {
+                    "string" == typeof t && (t = new Error(t)),
+                      s.recordSupportability("API/noticeError/called"),
+                      o("err", [t, u.now(), !1, e]);
+                  });
+              },
+              {},
+            ],
+            2: [
+              function (t, e, n) {
+                function r(t) {
+                  if (NREUM.init) {
+                    for (
+                      var e = NREUM.init, n = t.split("."), r = 0;
+                      r < n.length - 1;
+                      r++
+                    )
+                      if (((e = e[n[r]]), "object" != typeof e)) return;
+                    return (e = e[n[n.length - 1]]);
+                  }
+                }
+                e.exports = { getConfiguration: r };
+              },
+              {},
+            ],
+            3: [
+              function (t, e, n) {
+                var r = !1;
+                try {
+                  var i = Object.defineProperty({}, "passive", {
+                    get: function () {
+                      r = !0;
+                    },
+                  });
+                  window.addEventListener("testPassive", null, i),
+                    window.removeEventListener("testPassive", null, i);
+                } catch (o) {}
+                e.exports = function (t) {
+                  return r ? { passive: !0, capture: !!t } : !!t;
+                };
+              },
+              {},
+            ],
+            4: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [a, t, { name: t }, e];
+                  return o("storeMetric", n, null, "api"), n;
+                }
+                function i(t, e) {
+                  var n = [c, t, { name: t }, e];
+                  return o("storeEventMetrics", n, null, "api"), n;
+                }
+                var o = t("handle"),
+                  a = "sm",
+                  c = "cm";
+                e.exports = {
+                  constants: { SUPPORTABILITY_METRIC: a, CUSTOM_METRIC: c },
+                  recordSupportability: r,
+                  recordCustom: i,
+                };
+              },
+              {},
+            ],
+            5: [
+              function (t, e, n) {
+                function r() {
+                  return c.exists && performance.now
+                    ? Math.round(performance.now())
+                    : (o = Math.max(new Date().getTime(), o)) - a;
+                }
+                function i() {
+                  return o;
+                }
+                var o = new Date().getTime(),
+                  a = o,
+                  c = t(11);
+                (e.exports = r),
+                  (e.exports.offset = a),
+                  (e.exports.getLastTimestamp = i);
+              },
+              {},
+            ],
+            6: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = t.getEntries();
+                  n.forEach(function (t) {
+                    "first-paint" === t.name
+                      ? l("timing", ["fp", Math.floor(t.startTime)])
+                      : "first-contentful-paint" === t.name &&
+                        l("timing", ["fcp", Math.floor(t.startTime)]);
+                  });
+                }
+                function i(t, e) {
+                  var n = t.getEntries();
+                  if (n.length > 0) {
+                    var r = n[n.length - 1];
+                    if (u && u < r.startTime) return;
+                    var i = [r],
+                      o = a({});
+                    o && i.push(o), l("lcp", i);
+                  }
+                }
+                function o(t) {
+                  t.getEntries().forEach(function (t) {
+                    t.hadRecentInput || l("cls", [t]);
+                  });
+                }
+                function a(t) {
+                  var e =
+                    navigator.connection ||
+                    navigator.mozConnection ||
+                    navigator.webkitConnection;
+                  if (e)
+                    return (
+                      e.type && (t["net-type"] = e.type),
+                      e.effectiveType && (t["net-etype"] = e.effectiveType),
+                      e.rtt && (t["net-rtt"] = e.rtt),
+                      e.downlink && (t["net-dlink"] = e.downlink),
+                      t
+                    );
+                }
+                function c(t) {
+                  if (t instanceof y && !w) {
+                    var e = Math.round(t.timeStamp),
+                      n = { type: t.type };
+                    a(n),
+                      e <= v.now()
+                        ? (n.fid = v.now() - e)
+                        : e > v.offset && e <= Date.now()
+                        ? ((e -= v.offset), (n.fid = v.now() - e))
+                        : (e = v.now()),
+                      (w = !0),
+                      l("timing", ["fi", e, n]);
+                  }
+                }
+                function f(t) {
+                  "hidden" === t && ((u = v.now()), l("pageHide", [u]));
+                }
+                if (
+                  !(
+                    "init" in NREUM &&
+                    "page_view_timing" in NREUM.init &&
+                    "enabled" in NREUM.init.page_view_timing &&
+                    NREUM.init.page_view_timing.enabled === !1
+                  )
+                ) {
+                  var u,
+                    s,
+                    d,
+                    p,
+                    l = t("handle"),
+                    v = t("loader"),
+                    m = t(8),
+                    g = t(3),
+                    y = NREUM.o.EV;
+                  if (
+                    "PerformanceObserver" in window &&
+                    "function" == typeof window.PerformanceObserver
+                  ) {
+                    s = new PerformanceObserver(r);
+                    try {
+                      s.observe({ entryTypes: ["paint"] });
+                    } catch (h) {}
+                    d = new PerformanceObserver(i);
+                    try {
+                      d.observe({ entryTypes: ["largest-contentful-paint"] });
+                    } catch (h) {}
+                    p = new PerformanceObserver(o);
+                    try {
+                      p.observe({ type: "layout-shift", buffered: !0 });
+                    } catch (h) {}
+                  }
+                  if ("addEventListener" in document) {
+                    var w = !1,
+                      b = [
+                        "click",
+                        "keydown",
+                        "mousedown",
+                        "pointerdown",
+                        "touchstart",
+                      ];
+                    b.forEach(function (t) {
+                      document.addEventListener(t, c, g(!1));
+                    });
+                  }
+                  m(f);
+                }
+              },
+              {},
+            ],
+            7: [
+              function (t, e, n) {
+                function r(t, e) {
+                  if (!i) return !1;
+                  if (t !== i) return !1;
+                  if (!e) return !0;
+                  if (!o) return !1;
+                  for (
+                    var n = o.split("."), r = e.split("."), a = 0;
+                    a < r.length;
+                    a++
+                  )
+                    if (r[a] !== n[a]) return !1;
+                  return !0;
+                }
+                var i = null,
+                  o = null,
+                  a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                  var c = navigator.userAgent,
+                    f = c.match(a);
+                  f &&
+                    c.indexOf("Chrome") === -1 &&
+                    c.indexOf("Chromium") === -1 &&
+                    ((i = "Safari"), (o = f[1]));
+                }
+                e.exports = { agent: i, version: o, match: r };
+              },
+              {},
+            ],
+            8: [
+              function (t, e, n) {
+                function r(t) {
+                  function e() {
+                    t(
+                      c && document[c]
+                        ? document[c]
+                        : document[o]
+                        ? "hidden"
+                        : "visible"
+                    );
+                  }
+                  "addEventListener" in document &&
+                    a &&
+                    document.addEventListener(a, e, i(!1));
+                }
+                var i = t(3);
+                e.exports = r;
+                var o, a, c;
+                "undefined" != typeof document.hidden
+                  ? ((o = "hidden"),
+                    (a = "visibilitychange"),
+                    (c = "visibilityState"))
+                  : "undefined" != typeof document.msHidden
+                  ? ((o = "msHidden"), (a = "msvisibilitychange"))
+                  : "undefined" != typeof document.webkitHidden &&
+                    ((o = "webkitHidden"),
+                    (a = "webkitvisibilitychange"),
+                    (c = "webkitVisibilityState"));
+              },
+              {},
+            ],
+            9: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [],
+                    r = "",
+                    o = 0;
+                  for (r in t) i.call(t, r) && ((n[o] = e(r, t[r])), (o += 1));
+                  return n;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            10: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  e || (e = 0),
+                    "undefined" == typeof n && (n = t ? t.length : 0);
+                  for (
+                    var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i);
+                    ++r < i;
+
+                  )
+                    o[r] = t[e + r];
+                  return o;
+                }
+                e.exports = r;
+              },
+              {},
+            ],
+            11: [
+              function (t, e, n) {
+                e.exports = {
+                  exists:
+                    "undefined" != typeof window.performance &&
+                    window.performance.timing &&
+                    "undefined" !=
+                      typeof window.performance.timing.navigationStart,
+                };
+              },
+              {},
+            ],
+            ee: [
+              function (t, e, n) {
+                function r() {}
+                function i(t) {
+                  function e(t) {
+                    return t && t instanceof r ? t : t ? u(t, f, a) : a();
+                  }
+                  function n(n, r, i, o, a) {
+                    if ((a !== !1 && (a = !0), !l.aborted || o)) {
+                      t && a && t(n, r, i);
+                      for (
+                        var c = e(i), f = m(n), u = f.length, s = 0;
+                        s < u;
+                        s++
+                      )
+                        f[s].apply(c, r);
+                      var p = d[w[n]];
+                      return p && p.push([b, n, r, c]), c;
+                    }
+                  }
+                  function o(t, e) {
+                    h[t] = m(t).concat(e);
+                  }
+                  function v(t, e) {
+                    var n = h[t];
+                    if (n)
+                      for (var r = 0; r < n.length; r++)
+                        n[r] === e && n.splice(r, 1);
+                  }
+                  function m(t) {
+                    return h[t] || [];
+                  }
+                  function g(t) {
+                    return (p[t] = p[t] || i(n));
+                  }
+                  function y(t, e) {
+                    l.aborted ||
+                      s(t, function (t, n) {
+                        (e = e || "feature"), (w[n] = e), e in d || (d[e] = []);
+                      });
+                  }
+                  var h = {},
+                    w = {},
+                    b = {
+                      on: o,
+                      addEventListener: o,
+                      removeEventListener: v,
+                      emit: n,
+                      get: g,
+                      listeners: m,
+                      context: e,
+                      buffer: y,
+                      abort: c,
+                      aborted: !1,
+                    };
+                  return b;
+                }
+                function o(t) {
+                  return u(t, f, a);
+                }
+                function a() {
+                  return new r();
+                }
+                function c() {
+                  (d.api || d.feature) &&
+                    ((l.aborted = !0), (d = l.backlog = {}));
+                }
+                var f = "nr@context",
+                  u = t("gos"),
+                  s = t(9),
+                  d = {},
+                  p = {},
+                  l = (e.exports = i());
+                (e.exports.getOrSetContext = o), (l.backlog = d);
+              },
+              {},
+            ],
+            gos: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  if (i.call(t, e)) return t[e];
+                  var r = n();
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.defineProperty(t, e, {
+                          value: r,
+                          writable: !0,
+                          enumerable: !1,
+                        }),
+                        r
+                      );
+                    } catch (o) {}
+                  return (t[e] = r), r;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            handle: [
+              function (t, e, n) {
+                function r(t, e, n, r) {
+                  i.buffer([t], r), i.emit(t, e, n);
+                }
+                var i = t("ee").get("handle");
+                (e.exports = r), (r.ee = i);
+              },
+              {},
+            ],
+            id: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = typeof t;
+                  return !t || ("object" !== e && "function" !== e)
+                    ? -1
+                    : t === window
+                    ? 0
+                    : a(t, o, function () {
+                        return i++;
+                      });
+                }
+                var i = 1,
+                  o = "nr@id",
+                  a = t("gos");
+                e.exports = r;
+              },
+              {},
+            ],
+            loader: [
+              function (t, e, n) {
+                function r() {
+                  if (!M++) {
+                    var t = (T.info = NREUM.info),
+                      e = m.getElementsByTagName("script")[0];
+                    if (
+                      (setTimeout(u.abort, 3e4),
+                      !(t && t.licenseKey && t.applicationID && e))
+                    )
+                      return u.abort();
+                    f(x, function (e, n) {
+                      t[e] || (t[e] = n);
+                    });
+                    var n = a();
+                    c("mark", ["onload", n + T.offset], null, "api"),
+                      c("timing", ["load", n]);
+                    var r = m.createElement("script");
+                    0 === t.agent.indexOf("http://") ||
+                    0 === t.agent.indexOf("https://")
+                      ? (r.src = t.agent)
+                      : (r.src = l + "://" + t.agent),
+                      e.parentNode.insertBefore(r, e);
+                  }
+                }
+                function i() {
+                  "complete" === m.readyState && o();
+                }
+                function o() {
+                  c("mark", ["domContent", a() + T.offset], null, "api");
+                }
+                var a = t(5),
+                  c = t("handle"),
+                  f = t(9),
+                  u = t("ee"),
+                  s = t(7),
+                  d = t(2),
+                  p = t(3),
+                  l = d.getConfiguration("ssl") === !1 ? "http" : "https",
+                  v = window,
+                  m = v.document,
+                  g = "addEventListener",
+                  y = "attachEvent",
+                  h = v.XMLHttpRequest,
+                  w = h && h.prototype,
+                  b = !1;
+                NREUM.o = {
+                  ST: setTimeout,
+                  SI: v.setImmediate,
+                  CT: clearTimeout,
+                  XHR: h,
+                  REQ: v.Request,
+                  EV: v.Event,
+                  PR: v.Promise,
+                  MO: v.MutationObserver,
+                };
+                var E = "" + location,
+                  x = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-1216.min.js",
+                  },
+                  O = h && w && w[g] && !/CriOS/.test(navigator.userAgent),
+                  T = (e.exports = {
+                    offset: a.getLastTimestamp(),
+                    now: a,
+                    origin: E,
+                    features: {},
+                    xhrWrappable: O,
+                    userAgent: s,
+                    disabled: b,
+                  });
+                if (!b) {
+                  t(1),
+                    t(6),
+                    m[g]
+                      ? (m[g]("DOMContentLoaded", o, p(!1)),
+                        v[g]("load", r, p(!1)))
+                      : (m[y]("onreadystatechange", i), v[y]("onload", r)),
+                    c("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                  var M = 0;
+                }
+              },
+              {},
+            ],
+            "wrap-function": [
+              function (t, e, n) {
+                function r(t, e) {
+                  function n(e, n, r, f, u) {
+                    function nrWrapper() {
+                      var o, a, s, p;
+                      try {
+                        (a = this),
+                          (o = d(arguments)),
+                          (s = "function" == typeof r ? r(o, a) : r || {});
+                      } catch (l) {
+                        i([l, "", [o, a, f], s], t);
+                      }
+                      c(n + "start", [o, a, f], s, u);
+                      try {
+                        return (p = e.apply(a, o));
+                      } catch (v) {
+                        throw (c(n + "err", [o, a, v], s, u), v);
+                      } finally {
+                        c(n + "end", [o, a, p], s, u);
+                      }
+                    }
+                    return a(e)
+                      ? e
+                      : (n || (n = ""),
+                        (nrWrapper[p] = e),
+                        o(e, nrWrapper, t),
+                        nrWrapper);
+                  }
+                  function r(t, e, r, i, o) {
+                    r || (r = "");
+                    var c,
+                      f,
+                      u,
+                      s = "-" === r.charAt(0);
+                    for (u = 0; u < e.length; u++)
+                      (f = e[u]),
+                        (c = t[f]),
+                        a(c) || (t[f] = n(c, s ? f + r : r, i, f, o));
+                  }
+                  function c(n, r, o, a) {
+                    if (!v || e) {
+                      var c = v;
+                      v = !0;
+                      try {
+                        t.emit(n, r, o, e, a);
+                      } catch (f) {
+                        i([f, n, r, o], t);
+                      }
+                      v = c;
+                    }
+                  }
+                  return t || (t = s), (n.inPlace = r), (n.flag = p), n;
+                }
+                function i(t, e) {
+                  e || (e = s);
+                  try {
+                    e.emit("internal-error", t);
+                  } catch (n) {}
+                }
+                function o(t, e, n) {
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      var r = Object.keys(t);
+                      return (
+                        r.forEach(function (n) {
+                          Object.defineProperty(e, n, {
+                            get: function () {
+                              return t[n];
+                            },
+                            set: function (e) {
+                              return (t[n] = e), e;
+                            },
+                          });
+                        }),
+                        e
+                      );
+                    } catch (o) {
+                      i([o], n);
+                    }
+                  for (var a in t) l.call(t, a) && (e[a] = t[a]);
+                  return e;
+                }
+                function a(t) {
+                  return !(t && t instanceof Function && t.apply && !t[p]);
+                }
+                function c(t, e) {
+                  var n = e(t);
+                  return (n[p] = t), o(t, n, s), n;
+                }
+                function f(t, e, n) {
+                  var r = t[e];
+                  t[e] = c(r, n);
+                }
+                function u() {
+                  for (
+                    var t = arguments.length, e = new Array(t), n = 0;
+                    n < t;
+                    ++n
+                  )
+                    e[n] = arguments[n];
+                  return e;
+                }
+                var s = t("ee"),
+                  d = t(10),
+                  p = "nr@original",
+                  l = Object.prototype.hasOwnProperty,
+                  v = !1;
+                (e.exports = r),
+                  (e.exports.wrapFunction = c),
+                  (e.exports.wrapInPlace = f),
+                  (e.exports.argsToArray = u);
+              },
+              {},
+            ],
+          },
+          {},
+          ["loader"]
+        ));
+    </script>
     <!-- Google Tag Manager -->
     <script>
       var googleTagManagerId = "GTM-NXC5ZDL";
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer', googleTagManagerId);</script>
-      <!-- End Google Tag Manager -->
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", googleTagManagerId);
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- HotJar configuration -->
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:1653170,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 1653170, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
     <!-- End of HotJar configuration -->
 
     <title>Dashboard</title>
     <meta name="csrf-param" content="authenticity_token" />
-    <meta name="csrf-token" content="umuxPS_-Sr9hTqdJpJrBiG86jHCJFX7US81j9jgOgLWLfmIDlA7aphU9LzJiIYdp9Bba8QdR0Dk7PHJO9CBPLg" />
+    <meta
+      name="csrf-token"
+      content="umuxPS_-Sr9hTqdJpJrBiG86jHCJFX7US81j9jgOgLWLfmIDlA7aphU9LzJiIYdp9Bba8QdR0Dk7PHJO9CBPLg"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css" media="all" data-turbolinks-track="reload" />
-    <script src="/assets/application-8b638b7245bf8089193f60f82e63f65b12063ef922925ecdb62dad93ffac64ee.js" data-turbolinks-track="reload"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon-9131eebd628696d2eca01dac4e601638bd72a9cd363408b29b3c5ea67dfe3a17.ico" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="/style.css"
+      media="all"
+      data-turbolinks-track="reload"
+    />
+    <script
+      src="/assets/application-8b638b7245bf8089193f60f82e63f65b12063ef922925ecdb62dad93ffac64ee.js"
+      data-turbolinks-track="reload"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/favicon-9131eebd628696d2eca01dac4e601638bd72a9cd363408b29b3c5ea67dfe3a17.ico"
+    />
   </head>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXC5ZDL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NXC5ZDL"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="app" class="container-fluid h-100">
       <div class="row flex-nowrap">
         <div class="col-auto d-none d-lg-block px-0">
           <nav id="left-sidebar" class="h-100">
-              <div id = 'logo-container'>
-                <img alt="backgroung-image" id="logo" src="/assets/icon-white-6545162e585bbcd21acdfc30fbb9763ac2a42226c6a436f234a7bc370d4bf50f.png" />
-              </div>
+            <div id="logo-container">
+              <img
+                alt="backgroung-image"
+                id="logo"
+                src="/assets/icon-white-6545162e585bbcd21acdfc30fbb9763ac2a42226c6a436f234a7bc370d4bf50f.png"
+              />
+            </div>
             <div id="left-menu">
-              <h4>
-                HOME
-              </h4>
-              <ul class = "nav flex-column">
-                <li class = "nav-item">
-                  <a class="nav-link ca-sidebar-dashboard active" href="/dashboard">
-                    <i class = 'fas fa-columns'></i>Dashboard
-          </a>      </li>
+              <h4>HOME</h4>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-dashboard active"
+                    href="/dashboard"
+                  >
+                    <i class="fas fa-columns"></i>Dashboard
+                  </a>
+                </li>
               </ul>
-              <h4>
-                LEARN
-              </h4>
-              <ul class = "nav flex-column">
-                  <li class = "nav-item">
-                    <a class="nav-link ca-sidebar-view-progress" href="/progress">
-                      <i class = 'fas fa-tasks'></i>View Progress
-          </a>        </li>
+              <h4>LEARN</h4>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link ca-sidebar-view-progress" href="/progress">
+                    <i class="fas fa-tasks"></i>View Progress
+                  </a>
+                </li>
 
-                  <li class = "nav-item">
-                    <a class="nav-link ca-sidebar-view-progress" href="/professional_skills">
-                      <i class = 'fas fa-user-tie'></i>Professional Skills Feedback
-          </a>        </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-view-progress"
+                    href="/professional_skills"
+                  >
+                    <i class="fas fa-user-tie"></i>Professional Skills Feedback
+                  </a>
+                </li>
 
-                <li class = "nav-item">
+                <li class="nav-item">
                   <a class="nav-link ca-sidebar-attendance" href="/attendance">
-                    <i class = 'fas fa-calendar-alt'></i>Attendance & Absences
-          </a>      </li>
+                    <i class="fas fa-calendar-alt"></i>Attendance & Absences
+                  </a>
+                </li>
 
-                <li class = "nav-item">
+                <li class="nav-item">
                   <a class="nav-link ca-sidebar-forms" href="/daily_rituals">
-                    <i class = 'fas fa-book'></i>Daily Rituals
-          </a>      </li>
+                    <i class="fas fa-book"></i>Daily Rituals
+                  </a>
+                </li>
               </ul>
 
-
-              <h4>
-                GET HELP
-              </h4>
-              <ul class = "nav flex-column">
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-technical-questions" href="https://questions.microverse.org/">
+              <h4>GET HELP</h4>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-technical-questions"
+                    href="https://questions.microverse.org/"
+                  >
                     <i class="fas fa-question-circle"></i>Technical Questions
-          </a>      </li>
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-faqs" href="https://microverse.zendesk.com/hc/en-us">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-faqs"
+                    href="https://microverse.zendesk.com/hc/en-us"
+                  >
                     <i class="far fa-question-circle"></i>FAQs and Announcements
-          </a>      </li>
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-office-hours" href="https://microverse.zendesk.com/hc/en-us/articles/360036510273">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-office-hours"
+                    href="https://microverse.zendesk.com/hc/en-us/articles/360036510273"
+                  >
                     <i class="fas fa-mail-bulk"></i>Career Services Office Hours
-          </a>      </li>
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-office-hours" href="https://airtable.com/shryKKk4rx7ONEkZo">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-office-hours"
+                    href="https://airtable.com/shryKKk4rx7ONEkZo"
+                  >
                     <i class="far fa-angry"></i>Report Harassment
-          </a>      </li>
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-office-hours" href="https://airtable.com/shrhPpbf9SUiFmdyY">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-office-hours"
+                    href="https://airtable.com/shrhPpbf9SUiFmdyY"
+                  >
                     <i class="far fa-handshake"></i>Partner collaboration help
-          </a>      </li>
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-office-hours" href="https://airtable.com/shr8ApqXENQ0DSHto">
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-office-hours"
+                    href="https://airtable.com/shr8ApqXENQ0DSHto"
+                  >
                     <i class="fas fa-users"></i>Group collaboration help
-          </a>      </li>
+                  </a>
+                </li>
               </ul>
 
+              <h4>USEFUL LINKS</h4>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-events"
+                    target="_blank"
+                    href="https://airtable.com/shrAR9LEzMrF5z0CX/tblUpfLCb0CUHXqqT"
+                  >
+                    <i class="fas fa-calendar-week"></i>Events
+                  </a>
+                </li>
 
-              <h4>
-                USEFUL LINKS
-              </h4>
-              <ul class = "nav flex-column">
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-feature-request"
+                    href=" https://microverse.zendesk.com/hc/en-us/community/topics/360001245574-Feature-Requests"
+                  >
+                    <i class="fas fa-clipboard-list"></i>Feature Request
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a class="nav-link ca-sidebar-events" target="_blank" href="https://airtable.com/shrAR9LEzMrF5z0CX/tblUpfLCb0CUHXqqT">
-                    <i class = 'fas fa-calendar-week'></i>Events
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-github"
+                    href="/github_education"
+                  >
+                    <i class="fab fa-github"></i>GitHub Education
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-feature-request" href=" https://microverse.zendesk.com/hc/en-us/community/topics/360001245574-Feature-Requests">
-                  <i class="fas fa-clipboard-list"></i>Feature Request
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-jobs"
+                    target="_blank"
+                    href="https://airtable.com/shrCprRmilpUdemPb/tblcc8crpTJFAwMa3"
+                  >
+                    <i class="fas fa-briefcase"></i>Part-time Microverse Jobs
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-github" href="/github_education">
-                    <i class = 'fab fa-github'></i>GitHub Education
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-provide-feedback"
+                    href=" https://airtable.com/shreGVFmCreD9LsjK"
+                  >
+                    <i class="fas fa-sticky-note"></i>Provide Feedback
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a class="nav-link ca-sidebar-jobs" target="_blank" href="https://airtable.com/shrCprRmilpUdemPb/tblcc8crpTJFAwMa3">
-                    <i class = 'fas fa-briefcase'></i>Part-time Microverse Jobs
-          </a>      </li>
-
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-provide-feedback" href=" https://airtable.com/shreGVFmCreD9LsjK">
-                  <i class="fas fa-sticky-note"></i>Provide Feedback
-          </a>      </li>
-
-                  <li class = "nav-item">
-                    <a class="nav-link ca-sidebar-appeal-repetition" href="/program_repetition_appeals/new">
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-appeal-repetition"
+                    href="/program_repetition_appeals/new"
+                  >
                     <i class="fas fa-hand-point-right"></i>Appeal a repetition
-          </a>        </li>
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-referral-program" href=" https://bit.ly/MV-refer-a-friend">
-                  <i class="fas fa-retweet"></i>Refer a Friend, Earn $150
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-referral-program"
+                    href=" https://bit.ly/MV-refer-a-friend"
+                  >
+                    <i class="fas fa-retweet"></i>Refer a Friend, Earn $150
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a class="nav-link ca-sidebar-report-bug" href="/cdn-cgi/l/email-protection#f0949586b09d9993829f8695828395de8a959e9495839bde939f9d">
-                  <i class="fas fa-bug"></i>Report a Bug
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ca-sidebar-report-bug"
+                    href="/cdn-cgi/l/email-protection#f0949586b09d9993829f8695828395de8a959e9495839bde939f9d"
+                  >
+                    <i class="fas fa-bug"></i>Report a Bug
+                  </a>
+                </li>
 
-                <li class = "nav-item">
-                  <a target="_blank" class="nav-link ca-sidebar-slack" href="https://microverse-students.slack.com">
-                    <i class = 'fab fa-slack'></i>Slack
-          </a>      </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-slack"
+                    href="https://microverse-students.slack.com"
+                  >
+                    <i class="fab fa-slack"></i>Slack
+                  </a>
+                </li>
 
-                  <li class = "nav-item">
-                    <a target="_blank" class="nav-link ca-sidebar-handbook" href="https://www.notion.so/microverse/Microverse-Student-Handbook-ca8ac3bfccdd4e708b26d5d967fe4392">
-                      <i class = 'fas fa-book'></i>Student Handbook
-          </a>        </li>
+                <li class="nav-item">
+                  <a
+                    target="_blank"
+                    class="nav-link ca-sidebar-handbook"
+                    href="https://www.notion.so/microverse/Microverse-Student-Handbook-ca8ac3bfccdd4e708b26d5d967fe4392"
+                  >
+                    <i class="fas fa-book"></i>Student Handbook
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>
@@ -181,9 +1061,20 @@
             <div class="col top-navbar-title d-flex">
               <div class="p-2">Dashboard</div>
               <div class="ml-auto p-2">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   <span class="account-user-avatar">
-                    <img alt="francisuloko@yahoo.com" class="rounded-circle" src="https://secure.gravatar.com/avatar/c6e3d68b557877c7100618c469dda0d9?s=80" />
+                    <img
+                      alt="francisuloko@yahoo.com"
+                      class="rounded-circle"
+                      src="https://secure.gravatar.com/avatar/c6e3d68b557877c7100618c469dda0d9?s=80"
+                    />
                   </span>
                 </a>
                 <div class="dropdown-menu">
@@ -199,7 +1090,9 @@
             <div class="col-12 col-lg-7">
               <div class="col d-flex my-3">
                 <div class="card flex-fill">
-                  <div class="card-body d-flex flex-column justify-content-start p-4">
+                  <div
+                    class="card-body d-flex flex-column justify-content-start p-4"
+                  >
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-column">
                         <b class="dashboard-font-bold">Program Progress</b>
@@ -209,81 +1102,141 @@
                         <span class="dashboard-font">2 modules remaining</span>
                       </div>
                     </div>
-          
-                    <div class="progress mt-3" style="height: 30px;">
-                      <div class="progress-bar dashboard-module-completion-percentage" role="progressbar" style="background-color: #6439F4 !important; width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+
+                    <div class="progress mt-3" style="height: 30px">
+                      <div
+                        class="progress-bar dashboard-module-completion-percentage"
+                        role="progressbar"
+                        style="background-color: #6439f4 !important; width: 75%"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        75%
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col">          
+              <div class="col">
                 <div class="row">
                   <div class="col">
                     <table class="table dashboard-daily-table">
-                      <div class="d-flex justify-content-between align-items-center t-header p-3">
+                      <div
+                        class="d-flex justify-content-between align-items-center t-header p-3"
+                      >
                         <div class="schedule">
                           <span>Thursday Schedule</span>
                         </div>
                         <div class="timezone">
                           <span>Time Zone: </span>
-                          <span class="badge badge-pill badge-secondary mx-2">UTC-6</span>
+                          <span class="badge badge-pill badge-secondary mx-2"
+                            >UTC-6</span
+                          >
                         </div>
                       </div>
                       <tbody>
                         <tr class="coding-challenges-meeting">
-                          <td class="dashboard-daily-table-text interval-text">8:00 - 8:30</td>
-                          <td class="dashboard-daily-table-text icon-and-text">
-                            <span class="dashboard-daily-dot-icon-transparent"></span>
-                            Morning session
-                            <a href="https://microverse.zendesk.com/hc/en-us/articles/360042226153-What-do-we-do-in-the-Morning-Session-"><i class="fas fa-info-circle"></i></a>
+                          <td class="dashboard-daily-table-text interval-text">
+                            8:00 - 8:30
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"></td>
+                          <td class="dashboard-daily-table-text icon-and-text">
+                            <span
+                              class="dashboard-daily-dot-icon-transparent"
+                            ></span>
+                            Morning session
+                            <a
+                              href="https://microverse.zendesk.com/hc/en-us/articles/360042226153-What-do-we-do-in-the-Morning-Session-"
+                              ><i class="fas fa-info-circle"></i
+                            ></a>
+                          </td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          ></td>
                         </tr>
                         <tr class="collaborative-learning-1">
-                          <td class="dashboard-daily-table-text interval-text">8:30 - 12:00</td>
-                          <td class="dashboard-daily-table-text icon-and-text">
-                            <span class="dashboard-daily-dot-icon-transparent"></span>
-                            Program time*
-                            <a href="https://microverse.zendesk.com/hc/en-us/articles/360046853533-The-Collaborative-Coding-Session"><i class="fas fa-info-circle"></i></a>
+                          <td class="dashboard-daily-table-text interval-text">
+                            8:30 - 12:00
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"></td>
+                          <td class="dashboard-daily-table-text icon-and-text">
+                            <span
+                              class="dashboard-daily-dot-icon-transparent"
+                            ></span>
+                            Program time*
+                            <a
+                              href="https://microverse.zendesk.com/hc/en-us/articles/360046853533-The-Collaborative-Coding-Session"
+                              ><i class="fas fa-info-circle"></i
+                            ></a>
+                          </td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          ></td>
                         </tr>
                         <tr class="lunch-break">
-                          <td class="dashboard-daily-table-text interval-text">12:00 - 13:00</td>
-                          <td class="dashboard-daily-table-text icon-and-text">
-                            <span class="dashboard-daily-dot-icon-transparent"></span>
-                            Lunch break
-                            
+                          <td class="dashboard-daily-table-text interval-text">
+                            12:00 - 13:00
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"></td>
+                          <td class="dashboard-daily-table-text icon-and-text">
+                            <span
+                              class="dashboard-daily-dot-icon-transparent"
+                            ></span>
+                            Lunch break
+                          </td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          ></td>
                         </tr>
                         <tr class="collaborative-learning-2">
-                          <td class="dashboard-daily-table-text interval-text">13:00 - 16:45</td>
+                          <td class="dashboard-daily-table-text interval-text">
+                            13:00 - 16:45
+                          </td>
                           <td class="dashboard-daily-table-text icon-and-text">
                             <span class="dashboard-daily-dot-icon-green"></span>
                             Program time*
-                            <a href="https://microverse.zendesk.com/hc/en-us/articles/360046853533-The-Collaborative-Coding-Session"><i class="fas fa-info-circle"></i></a>
+                            <a
+                              href="https://microverse.zendesk.com/hc/en-us/articles/360046853533-The-Collaborative-Coding-Session"
+                              ><i class="fas fa-info-circle"></i
+                            ></a>
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"><a target="_blank" class="btn btn-primary" href="https://microverse.zoom.us/j/5380399595?pwd=VzIrRENjN2pOV0toNnFQak5WOWlSUT09">Join Call</a></td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          >
+                            <a
+                              target="_blank"
+                              class="btn btn-primary"
+                              href="https://microverse.zoom.us/j/5380399595?pwd=VzIrRENjN2pOV0toNnFQak5WOWlSUT09"
+                              >Join Call</a
+                            >
+                          </td>
                         </tr>
                         <tr class="daily-standup-prep">
-                          <td class="dashboard-daily-table-text interval-text">16:45 - 17:00</td>
-                          <td class="dashboard-daily-table-text icon-and-text">
-                            <span class="dashboard-daily-dot-icon-transparent"></span>
-                            Prep for your standup call
-                            
+                          <td class="dashboard-daily-table-text interval-text">
+                            16:45 - 17:00
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"></td>
+                          <td class="dashboard-daily-table-text icon-and-text">
+                            <span
+                              class="dashboard-daily-dot-icon-transparent"
+                            ></span>
+                            Prep for your standup call
+                          </td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          ></td>
                         </tr>
                         <tr class="daily-standup">
-                          <td class="dashboard-daily-table-text interval-text">17:00 - 17:15</td>
-                          <td class="dashboard-daily-table-text icon-and-text">
-                            <span class="dashboard-daily-dot-icon-transparent"></span>
-                            Standup team meeting
-                            
+                          <td class="dashboard-daily-table-text interval-text">
+                            17:00 - 17:15
                           </td>
-                          <td class="dashboard-daily-table-button text-right video-link host-id daily-tab"></td>
+                          <td class="dashboard-daily-table-text icon-and-text">
+                            <span
+                              class="dashboard-daily-dot-icon-transparent"
+                            ></span>
+                            Standup team meeting
+                          </td>
+                          <td
+                            class="dashboard-daily-table-button text-right video-link host-id daily-tab"
+                          ></td>
                         </tr>
                       </tbody>
                     </table>
@@ -295,23 +1248,39 @@
             <div class="col-12 col-lg-5">
               <div class="row mt-3">
                 <div class="col">
-                  <table class="table dashboard-daily-table">                   
+                  <table class="table dashboard-daily-table">
                     <tbody>
                       <div class="d-flex align-items-center">
                         <div class="d-flex flex-fill">
                           <div class="card flex-fill">
-                            <div class="card-body d-flex flex-column justify-content-center text-center font-weight-bold">
-                              <span class="dashboard-font-bold">Module Repeats</span>
-                              <span class="dashboard-stat-number font-weight-bold mt-1 dashboard-module-reptition-count" style="font-size: 26px;">0 / 3</span>
+                            <div
+                              class="card-body d-flex flex-column justify-content-center text-center font-weight-bold"
+                            >
+                              <span class="dashboard-font-bold"
+                                >Module Repeats</span
+                              >
+                              <span
+                                class="dashboard-stat-number font-weight-bold mt-1 dashboard-module-reptition-count"
+                                style="font-size: 26px"
+                                >0 / 3</span
+                              >
                               <span class="dashboard-font mt-1">Repeated</span>
                             </div>
                           </div>
                         </div>
                         <div class="d-flex flex-fill">
                           <div class="card flex-fill mx-1">
-                            <div class="card-body d-flex flex-column justify-content-center text-center font-weight-bold">
-                              <span class="dashboard-font-bold">Block Repeats</span>
-                              <span class="dashboard-stat-number font-weight-bold mt-1 dashboard-module-reptition-count" style="font-size: 26px;">0 / 1</span>
+                            <div
+                              class="card-body d-flex flex-column justify-content-center text-center font-weight-bold"
+                            >
+                              <span class="dashboard-font-bold"
+                                >Block Repeats</span
+                              >
+                              <span
+                                class="dashboard-stat-number font-weight-bold mt-1 dashboard-module-reptition-count"
+                                style="font-size: 26px"
+                                >0 / 1</span
+                              >
                               <span class="dashboard-font mt-1">Repeated</span>
                             </div>
                           </div>
@@ -322,71 +1291,139 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col">
-                  <div class="">
-                    <div class="d-flex justify-content-between align-items-center t-header p-3">
+                <div class="col shadow rounded p-0 m-3">
+                  <div>
+                    <div
+                      class="d-flex justify-content-between align-items-center t-header p-3"
+                    >
                       <div class="repetitions">
                         <span>This block's collaboration</span>
-                      </div>
+                        <a
+                          target="_blank"
+                          href="https://microverse-students.slack.com/archives/C03EJTAAL90"
+                        >
+                          <i class="fas fa-info-circle"></i>
+                        </a>
                       </div>
                     </div>
-                    <tbody>
-                        <div>
-                          <div class="dashboard-daily-table-text interval-text"><a target="_blank" href="https://microverse-students.slack.com/archives/C03EJTAAL90">Morning session group</a></div>
-                          <div class="dashboard-daily-table-text interval-text">
-                            <ul class="mb-0" style="list-style-type:none; padding: 0;">
-                                <li><a target="_blank" href="https://github.com/francisuloko">Francis</a></li>
-                                <li><a target="_blank" href="https://github.com/errea">Eri</a></li>
-                            <ul>
-                          </ul></ul></div>
-                        </div>
-        
-                        <div>
-                          <div class="dashboard-daily-table-text interval-text"><a target="_blank" href="https://microverse-students.slack.com/archives/C03C97Q493R">Standup team</a></div>
-                          <div class="dashboard-daily-table-text interval-text">
-                            <ul class="mb-0" style="list-style-type:none; padding: 0;">
-                                <li><a target="_blank" href="https://github.com/YuvrajM108">Yuvraj</a></li>
-                                <li><a target="_blank" href="https://github.com/rpire">Rubén</a></li>
-                                <li><a target="_blank" href="https://github.com/francisuloko">Francis</a></li>
-                                <li><a target="_blank" href="https://github.com/bimbolabuari">Abimbola</a></li>
-                                <li><a target="_blank" href="https://github.com/errea">Eri</a></li>
-                            <ul>
-                          </ul></ul></div>
-                        </div>
-        
-                        <div>
-                          <div class="dashboard-daily-table-text interval-text"><a target="_blank" href="https://microverse-students.slack.com/archives/C03EJTJNPNX">Coding Partner(s)</a></div>
-                          <div class="dashboard-daily-table-text interval-text">
-                            <ul class="mb-0" style="list-style-type:none; padding: 0;">
-                                <li><a target="_blank" href="https://github.com/francisuloko">Francis</a></li>
-                                <li><a target="_blank" href="https://github.com/bimbolabuari">Abimbola</a></li>
-                            <ul>
-                          </ul></ul></div>
-                        </div>
-        
-                          <div>
-                            <div class="dashboard-daily-table-text interval-text">Career Coach</div>
-                            <div class="dashboard-daily-table-text interval-text">
-                              matthias.feist@microverse.org
-                            </div>
-                          </div>
-                    </tbody>
                   </div>
-                  <div class="schedule-asterisk-info mb-4">
-                    <p>
-                      *Program time is spent learning individually, building projects, and working with your partner(s). You must join a call for <strong>at least 10 minutes with your partner(s) during both program time sessions.</strong>
-                    </p>
+                  <div>
+                    <div class="d-flex align-items-center border-bottom py-2">
+                      <div class="px-3 py-2">Morning session group</div>
+                      <div class="px-3">
+                        <div
+                          class="d-flex align-items-center">
+                          <a
+                            target="_blank"
+                            href="https://github.com/francisuloko"
+                            >Francis</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a target="_blank" href="https://github.com/errea"
+                            >Eri</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center border-bottom py-2">
+                      <div class="px-3 py-2">Standup team</div>
+                      <div class="px-3">
+                        <div
+                          class="d-flex flex-wrap align-items-center">
+                          <a
+                            target="_blank"
+                            href="https://github.com/YuvrajM108"
+                            >Yuvraj</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a target="_blank" href="https://github.com/rpire"
+                            >Rubén</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a
+                            target="_blank"
+                            href="https://github.com/francisuloko"
+                            >Francis</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a
+                            target="_blank"
+                            href="https://github.com/bimbolabuari"
+                            >Abimbola</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a target="_blank" href="https://github.com/errea"
+                            >Eri</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center border-bottom py-2">
+                      <div class="px-3 py-2">Coding Partner(s)</div>
+                      <div class="px-3">
+                        <div
+                          class="d-flex flex-wrap align-items-center">
+                          <a
+                            target="_blank"
+                            href="https://github.com/francisuloko"
+                            >Francis</a
+                          >
+                          <span class="mx-2 text-secondary">•</span>
+                          <a
+                            target="_blank"
+                            href="https://github.com/bimbolabuari"
+                            >Abimbola</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center border-bottom py-2">
+                      <div class="px-3 py-2">Career Coach</div>
+                      <div class="d-flex align-items-center">
+                        matthias.feist@microverse.org
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div class="schedule-asterisk-info mb-4">
+                  <p>
+                    *Program time is spent learning individually, building
+                    projects, and working with your partner(s). You must join a
+                    call for
+                    <strong
+                      >at least 10 minutes with your partner(s) during both
+                      program time sessions.</strong
+                    >
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </main>
       </div>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6936c634-d39b-48cb-a0dc-7a593661d14e"> </script>
+    <script
+      id="ze-snippet"
+      src="https://static.zdassets.com/ekr/snippet.js?key=6936c634-d39b-48cb-a0dc-7a593661d14e"
+    ></script>
     <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
   </body>
 </html>
