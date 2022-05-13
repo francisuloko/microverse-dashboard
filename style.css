@@ -22868,3 +22868,23 @@ img {
 .t-header {
   background-color: #f2f8ff;
 }
+
+i.i {
+  position: relative;
+}
+
+i.i:hover:after {
+  content: attr(data-title);
+  position: absolute;
+  font: 15px verdana;
+  top: -110%;
+  left: 0;
+  background: #333;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  width: 170px;
+  text-align: center;
+  z-index: 1;
+}
