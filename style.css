@@ -1879,10 +1879,11 @@ a {
   color: #3f6ad8;
   text-decoration: none;
   background-color: transparent;
+  text-decoration: none !important;
 }
 a:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 a:not([href]):not([tabindex]) {
   color: inherit;
