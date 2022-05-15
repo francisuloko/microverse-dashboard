@@ -10,6 +10,18 @@ My Enhanced Version
 ![Recommendation](./assets/microverse-enhanced.png)
 
 
+## Changes
+
+The most significant change I made to current dashboard was making good use of space to greatly improving cite aesthetics and usability.
+
+1. Main section clearly shows the two column layout.
+2. Removed headings to maximize space while still maintaining component function.
+3. Displayed collaborators using inline style with a dot separator.
+4. Resized scrollbars.
+5. Made repetition stat more coherent
+6. Ensured dashboard is responsive on all screen sizes.
+
+
 ## Built With
 
 - JavaScript
