@@ -18,7 +18,7 @@ The most significant change I made to current dashboard was making good use of s
 2. Removed headings to maximize space while still maintaining component function.
 3. Displayed collaborators using inline style with a dot separator.
 4. Resized scrollbars.
-5. Made repetition stat more coherent
+5. Made repetition stat more coherent.
 6. Ensured dashboard is responsive on all screen sizes.
 
 
