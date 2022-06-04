@@ -12,7 +12,7 @@ My Enhanced Version
 
 ## Changes
 
-The most significant change I made to current dashboard was making good use of space to greatly improving site aesthetics and usability.
+The most significant change I made to current dashboard was making good use of space to improve site aesthetics and usability.
 
 1. Main section clearly shows the two column layout.
 2. Removed headings to maximize space while still maintaining component function.
