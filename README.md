@@ -43,7 +43,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-  - run `git clone https://francisuloko.github.io/microverse-dashboard-enhancement.git` to clone the project.
+  - run `git clone https://github.com/francisuloko/microverse-dashboard-enhancement.git` to clone the project.
 
 ### Usage
 - Open angellist-feature directory
